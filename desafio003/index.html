@@ -1,17 +1,17 @@
 <!DOCTYPE html> 
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio 03</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
 	<section>
 		<h1>Conversor de Moedas v1.0</h1>
-		<p>Quantos R$ você tem na carteira?</p>
 		<form action="cad.php" method="get">
-			<input type="Number" name="numero" id="idnumero">
+			<label for="din">Quantos R$ você tem na carteira?</label>
+			<input type="Number" name="numero" id="idnumero" step="0.01">
 			<input type="submit" value="Converter">
 		</form>
 	</section>

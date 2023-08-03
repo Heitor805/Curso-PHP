@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <section>
 	<h1>Analisador de Número Real</h1>
 	<?php
-		$n = $_GET["numero"];
-		$i = number_format($numero, 0)
+		$n = $_GET["numero"] ?? 0;
+		$i = (int) $n;
 		$f = $n - $i;
-		echo "<p>Analisando o número <strong>$n</strong> informado pelo usuário: equivalem a <strong>U$ $d</strong></p>";
-		<ul>
-			echo "<li>A parte inteira do número é <strong>$i</strong></li>";
-			echo "<li>A parte fracionada do número é <strong>$f</strong></li>";
-		</ul>
+		echo "<p>Analisando o número <strong>". number_format($n, 3, ",", ".") ."</strong> informado pelo usuário: </p>";
+		echo "<ul>
+			<li>A parte inteira do número é <strong>" . number_format($i, 0, ",", ".") . "</strong></li>
+			<li>A parte fracionada do número é <strong>" . number_format($f, 3, ",", ".") . "</strong></li>
+		</ul>"
 	?>
-	<a href="javascript:history.go(-1)"><input type="submit" value="Voltar"></a>
+	<button onclick="javascript:window.location.href='index.html'">&#x2B05; Voltar</button>
     </section>
 </body>
 </html>
