@@ -8,7 +8,7 @@
   <li><a href="/ex002/index.php" target="_blank">aula02</a></li>
   <li><a href="/ex003/index.php" target="_blank">aula03</a></li>
   <li><a href="/ex3.5/index.php" target="_blank">aula3.5</a></li>
-  <li><a href="/ex004/index.html" target="_blank">aula04</a></li>
+  <li><a href="ex004/index.html" target="_blank">aula04</a></li>
   <li><a href="/ex4.5/index.php" target="_blank">aula4.5</a></li>
   <li><a href="/ex005/form.html" target="_blank">aula05</a></li>
   <li><a href="/ex006/index.php" target="_blank">aula06</a></li>
