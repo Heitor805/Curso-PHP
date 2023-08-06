@@ -12,6 +12,9 @@
   <li><a href="Curso-PHP/ex4.5/index.php" target="_blank">aula4.5</a></li>
   <li><a href="Curso-PHP/ex005/form.html" target="_blank">aula05</a></li>
   <li><a href="Curso-PHP/ex006/index.php" target="_blank">aula06</a></li>
+ </ul>
+ <h1> Desafios </h1>
+ <ul>
   <li><a href="Curso-PHP/desafio001/index.html" target="_blank">desafio01</a></li>
   <li><a href="Curso-PHP/desafio002/index.php" target="_blank">desafio02</a></li>
   <li><a href="Curso-PHP/desafio003/index.html" target="_blank">desafio03</a></li>
