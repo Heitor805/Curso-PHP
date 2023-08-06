@@ -12,7 +12,7 @@
 	?>
     <main>
 	<h1>Calculador de Tempo</h1>
-	<form action="<?php=$_SERVER['PHP_SELF'] ?>" method="get">
+	<form action="<?=$_SERVER['PHP_SELF'] ?>" method="get">
 		<label for="total">Qual é o total de segundos?</label>
 		<input type="number" name="total" id="total" value="<?=$total?>">
 		<input type="submit" value="Calcular">
@@ -29,13 +29,14 @@
 			$rhoras = $rdias % 3600;
 			$minutos = intdiv($rhoras, 60);
 			$rminutos = $rhoras % 60;
-			$segundos = ;
-			echo "<ul>Analisando o valor que você digitou <strong>$total segundos</strong> equivalem a um total de:
-				<li> semanas</li>
-				<li> dias</li>
-				<li> horas</li>
-				<li> minutos</li>
-				<li> segundos</li>
+			$segundos = $rminutos % 60;
+			echo "<p>Analisando o valor que você digitou <strong>" . number_format($total, 0, ",", ".") .  " segundos</strong> equivalem a um total de:</p>
+			<ul>
+				<li>$semanas semanas</li>
+				<li>$dias dias</li>
+				<li>$horas horas</li>
+				<li>$minutos minutos</li>
+				<li>$segundos segundos</li>
 			</ul>";
 		?>
 	</section>

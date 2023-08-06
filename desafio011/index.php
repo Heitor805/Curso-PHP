@@ -9,15 +9,15 @@
 <body>
 	<?php 
 		$preco = $_GET['pre']??0;
-        $reajuste = $_GET['reajuste']??0;
+        $reajuste = $_GET['rea']??0;
 	?>
     <main>
 	<h1>Reajustador de Preços</h1>
-	<form action="<?php=$_SERVER['PHP_SELF'] ?>" method="get">
+	<form action="<?=$_SERVER['PHP_SELF'] ?>" method="get">
 		<label for="pre">Preço do Produto (R$)</label>
-		<input type="number" name="pre" id="pre" value="<?=$preco?>">
-        <label for="rea">Qual será o percentual de reajuste? <strong><output id="irea"></output></strong></label>
-		<input type="range" name="rea" id="rea" min="0" max="100" value="50" oninput="irea.innerHTML = Number(rea.value)">
+		<input type="number" name="pre" id="pre" value="<?=$preco?>" step="0.01">
+        <label for="rea">Qual será o percentual de reajuste? (<strong><span id="irea">?</span>%</strong>)</label>
+		<input type="range" name="rea" id="rea" min="0" max="100" value="50" oninput="mudaValor()">
 		<input type="submit" value="Reajuste">
 	</form>
     </main>
@@ -26,8 +26,14 @@
 		<?php
 			$val = $preco * $reajuste / 100;
 			$res = $preco + $val;
-			echo "<p>O produto que custava R\$$preco com <strong>$reajuste de aumento</strong> vai passar a custar <strong>R\$$res</strong> a partir de agora.</p>";
+			echo "<p>O produto que custava R\$" .  number_format($preco, 2, ",", ".") . " com <strong>$reajuste% de aumento</strong> vai passar a custar <strong>R\$" .  number_format($res, 2, ",", ".") . "</strong> a partir de agora.</p>";
 		?>
 	</section>
+	<script>
+		mudaValor()
+		function mudaValor() {
+			irea.innerText = rea.value;
+		}
+	</script>
 </body>
 </html>

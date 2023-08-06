@@ -13,10 +13,10 @@
 	?>
     <main>
 	<h1>Calculando a sua idade</h1>
-	<form action="<?php=$_SERVER['PHP_SELF']?>" method="get">
+	<form action="<?=$_SERVER['PHP_SELF']?>" method="get">
 		<label for="ano">Em que ano você nasceu?</label>
 		<input type="number" name="ano" id="ano" value="<?=$ano?>">
-        <label for="ida">Quer saber sua idade em que ano? (Atualmente estamos em <?php= $atu=date('Y')?>)</label>
+        <label for="ida">Quer saber sua idade em que ano? (Atualmente estamos em <?=$atu=date('Y')?>)</label>
 		<input type="number" name="ida" id="ida" value="<?=$idade?>">
 		<input type="submit" value="Qual será minha idade?">		
 	</form>

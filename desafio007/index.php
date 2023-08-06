@@ -13,9 +13,9 @@ index.php
 	?>
     <main>
 	<h1>Informe seu salário</h1>
-	<form action="<?php=$_SERVER['PHP_SELF'] ?>" method="get">
+	<form action="<?=$_SERVER['PHP_SELF'] ?>" method="get">
 		<label for="v1">Salário (R$)</label>
-		<input type="number" name="n1" id="n1" value="<?=$valor1?>">
+		<input type="number" name="n1" id="n1" value="<?=$valor1?>" step="0.01">
 		<p>Considerando o salário mínimo de <strong>R$1.320,00</strong></p>
 		<input type="submit" value="Calcular">		
 	</form>
@@ -25,7 +25,7 @@ index.php
         <?php
             $resultado = intdiv($valor1, 1320);
             $resto = $valor1 % 1320;
-            echo "<p>Quem recebe um salário de R\$$valor1 ganha <strong>$resultado salários mínimos</strong> + R\$ $resto.</p>";
+            echo "<p>Quem recebe um salário de R\$$valor1 ganha <strong>$resultado salários mínimos</strong> + R\$ " . number_format($resto, 2, ",", ".") . ".</p>";
         ?>
     </section>
 </body>

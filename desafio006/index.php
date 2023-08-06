@@ -9,15 +9,15 @@
 <body>
 	<?php 
 		$valor1 = $_GET['n1']??0;
-		$valor2 = $_GET['n2']??0;
+		$valor2 = $_GET['n2']??1;
 	?>
     <main>
 	<h1>Analisador de uma Divisão</h1>
-	<form action="<?php=$_SERVER['PHP_SELF'] ?>" method="get">
-		<label for="v1">Dividendo</label>
-		<input type="number" name="n1" id="n1" value="<?=$valor1?>">
-		<label for="v2">Divisor</label>
-		<input type="number" name="n2" id="n2" value="<?=$valor2?>">
+	<form action="<?=$_SERVER['PHP_SELF'] ?>" method="get">
+		<label for="n1">Dividendo</label>
+		<input type="number" name="n1" id="n1" min="0" value="<?=$valor1?>">
+		<label for="n2">Divisor</label>
+		<input type="number" name="n2" id="n2" min="1" value="<?=$valor2?>">
 		<input type="submit" value="Analisar">		
 	</form>
 </main>
@@ -26,8 +26,17 @@
         <?php
             $resultado = intdiv($valor1, $valor2);
             $resto = $valor1 % $valor2;
-            echo "<table>$valor1 $valor2 $resultado $resto</table>";
         ?>
+            <table class="divisao">
+                <tr>
+                    <td><?=$valor1?></td>
+                    <td><?=$valor2?></td>
+                </tr>
+                <tr>
+                    <td><?=$resto?></td>
+                    <td><?=$resultado?></td>
+                </tr>
+            </table>
     </section>
 </body>
 </html>
